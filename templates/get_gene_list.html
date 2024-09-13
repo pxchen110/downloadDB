@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content%}
+<a href="{{ url_for('download', out_type= 'download_txt', out_prefix = out_prefix ) }}" class="btn" >download TXT</a>
+<a href="{{ url_for('download', out_type= 'download_csv', out_prefix = out_prefix ) }}" class="btn" >download CSV</a>
+{% endblock content%}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            background-color: lightskyblue; 
+            border: none;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        } 
+    </style>
+</head>
+<body>
+    <div>
+        <p> Query pathway ID: {{ pathway_name }} </p>
+        <p> The gene lists: <br> {{ gene_list }} </p>
+    </div>
+    
+
+    <a href="{{ url_for('download', out_type= 'download_txt', out_prefix = out_prefix ) }}" class="button" >download TXT</a>
+    <a href="{{ url_for('download', out_type= 'download_csv', out_prefix = out_prefix ) }}" class="button" >download CSV</a>
+</body>
+</html> -->

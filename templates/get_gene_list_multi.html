@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content%}
+<a href="{{ url_for('downloadZip', out_prefix = out_prefix, out_type = 'download_zip' ) }}" class="btn" role="button" aria-pressed="true">Download ZIP</a>
+
+{% endblock content%}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color: lightskyblue; 
+            border: none;
+            color: rgb(252, 242, 242);
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        } 
+    </style>
+</head>
+<body>
+    <div>
+        <p> Query pathway ID: {{ pathway_name }} </p>
+        <p> The gene lists: <br> {{ gene_list }} </p>
+    </div>
+    <a href="{{ url_for('downloadZip', out_prefix = out_prefix, out_type = 'download_zip' ) }}" class="btn" role="button" aria-pressed="true">Download ZIP</a>
+    
+    </body>
+</html> -->

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .h2 {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        .main-container, .col, .form-sty {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 2px;
+            background-color: rgb(207, 229, 236);
+        }
+        .row {
+            padding-bottom: 10px;
+        }
+
+        .input-container {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 50px;
+        }
+
+        .btn, .selbar {
+            background-color: antiquewhite;
+            border: 1px solid gray;
+            
+        }
+
+        .coler {
+            background-color: antiquewhite;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Extracting pathway gene list from Public databases</h2>
+
+    <div class="main-container"> 
+
+        <p>Available database: <a href="https://www.genome.jp/kegg/pathway.html">KEGG</a> and <a href="https://maayanlab.cloud/Harmonizome/">Harmonize databases</a></p>
+        
+        <div class="container text-center">
+            <h3>Input example:</h3>
+            <div class="row">
+              <div class="col coler">KEGG pathway url: https://www.kegg.jp/entry/hsa05130</div>
+              <div class="col coler">Harmonize geneset page url: https://maayanlab.cloud/Harmonizome/gene_set/BRCA2/Pathway+Commons+Protein-Protein+Interactions</div>
+              <div class="col coler">Harmonize api url: https://maayanlab.cloud/Harmonizome/api/1.0/gene_set/BRCA2/Pathway+Commons+Protein-Protein+Interactions</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="input-container"> 
+        <h3> Input section:</h3>
+        <p> User can choose one of the input format: </p>    
+    
+        <div class="row form-sty">
+            <p> For only one or two queries, user can select the <b>database source</b>, type <b>query pathway</b>, and click submit </p>
+            
+            <form method="POST">
+                <select name="db_source" class="selbar">
+                    <option value="kegg_db">KEGG</option>
+                    <option value="harmo_db">Harmonize</option> 
+                </select>
+                <input name="pathway_name" type="text" style="width: 245px;">
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>    
+    
+        <div class="row form-sty">
+            <p>For list of queries, user can select the <b>database source</b>, upload <b>text</b> file with list of queries urls</p>
+    
+            <form method="POST" enctype="multipart/form-data" > 
+                <!-- his is an important attr:  enctype="multipart/form-data"  -->
+                <select name="db_source" class="selbar">
+                    <option value="kegg_db">KEGG</option>
+                    <option value="harmo_db">Harmonize</option> 
+                </select>
+                <input name="file" type="file" accept="txt">
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    
+    </div>
+
+    
+
+
+
+
+</body>
+</html>
