@@ -49,6 +49,8 @@ def getManyGeneList(file_prefix, db_source):
     for multi queries, using loop to get gene lists and save as dict format
     """
     out_file_list = []
+    if not os.path.exists(os.path.join(os.getcwd(),'query_input')):
+        os.makedirs(os.path.join(os.getcwd(),'query_input'))
     with open('query_input/{}.txt'.format(file_prefix), 'r') as fh:
       total_gene_list = {}
       _count = 0
@@ -63,6 +65,9 @@ def getManyGeneList(file_prefix, db_source):
         out_file_list.append(out_name)
 
     out_prefix = '{}_gene_lists'.format(db_source)
+    if not os.path.exists(os.path.join(os.getcwd(),'query_output')):
+        os.makedirs(os.path.join(os.getcwd(),'query_output'))
+
     saveZipOutput('query_output', out_prefix, out_file_list)
        
     return render_template('get_gene_list_multi.html', gene_list = json.dumps(total_gene_list, indent=4), pathway_name = pathway_name, out_prefix = out_prefix )
@@ -72,7 +77,10 @@ def getManyGeneList(file_prefix, db_source):
 def getGeneList(pathway_name, db_source):
     
     gene_list = queryPathGenes(db_source, pathway_name)
+    if not os.path.exists(os.path.join(os.getcwd(),'query_output')):
+        os.makedirs(os.path.join(os.getcwd(),'query_output'))
      
+
     if type(gene_list) == str or len(gene_list) == 0:
         return render_template('no_result.html', pathway_name = pathway_name)
     
