@@ -17,10 +17,10 @@ Gene pathways play an critical role for bioscience, from experimental design of 
 - 執行專案前請開啟環境`conda activate flaskenv`  
 - 利用 python 開啟flask 網頁`python3 app.py`
 - 開啟 `http://127.0.0.1:5000` 連結後會看到以下網頁:
-![image](https://hackmd.io/_uploads/BJyojoChA.png)
+![image](https://github.com/pxchen110/downloadDB/blob/main/images/query_input.png)
 - 根據需求選擇其中一個Block輸入資料: **!注意一次僅接受一種輸入形式!**:
     - 查詢一個基因途徑(single query): 選擇資料庫種類 (`KEGG` 或 `Harmonizome`) 並依照範例輸入 pathway ID, api URL、點選 `Submit` 送出
     - 查詢多個基因途徑(multiple query):準備一份紀錄api URL 的 TXT 檔，選擇資料庫種類 (`KEGG` 或 `Harmonizome`)並上傳檔案、點選 `Submit` 送出
 - 若目標api或基因途徑存在，將會返回以下網頁內容:
-![image](https://hackmd.io/_uploads/SkwGpiC3A.png)
+![image](https://github.com/pxchen110/downloadDB/blob/main/images/query_output.png)
 - 點選 **Download TXT** 或 **Download CSV** 下載不同格式的基因列表；若提供多個基因途徑，點選**Download ZIP** 下載zip壓縮檔，解壓縮後每個基因列表產生一份TXT檔
